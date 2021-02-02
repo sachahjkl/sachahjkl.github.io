@@ -1,3 +1,24 @@
 baseURL = "https://hjkl.it/"
 languageCode = "fr"
-title = "Sacha FROMENT"
+title = "Sacha Froment"
+author = "Sacha Froment"
+theme = "hugo_theme_hjkl.it"
+
+canonifyurls = true
+
+[markup.goldmark.renderer]
+unsafe= true
+
+[[menu.primary]]
+name = "accueil"
+pre = "🏡"
+url = "/"
+[[menu.primary]]
+name = "projets"
+pre = "📁"
+url = "/projets"
+[[menu.primary]]
+name = "à propos"
+pre = "📜"
+url = "/a-propos"
+
