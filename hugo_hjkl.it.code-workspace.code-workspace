@@ -5,6 +5,8 @@
 		}
 	],
 	"settings": {
-		"prettier.printWidth": 180
+		"[html]": {
+			"prettier.printWidth": 180
+		},
 	}
 }

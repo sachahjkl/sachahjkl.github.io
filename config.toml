@@ -5,9 +5,15 @@ author = "Sacha Froment"
 theme = "hugo_theme_hjkl.it"
 
 canonifyurls = true
+include_toc = true
 
 [markup.goldmark.renderer]
-unsafe= true
+unsafe = true
+
+[taxonomies]
+tag = "tags"
+category = "categories"
+language = "languages"
 
 [[menu.primary]]
 name = "accueil"
@@ -21,4 +27,3 @@ url = "/projets"
 name = "à propos"
 pre = "📜"
 url = "/a-propos"
-
