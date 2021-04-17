@@ -12,7 +12,7 @@ draft: false
 
 [à propos de moi](/a-propos)
 
-Mon [CV](/pdf/cv-public-de-sacha-froment.pdf)
+<!-- Mon [CV](/pdf/cv-public-de-sacha-froment.pdf) -->
 
 📧 [M'envoyer un mail](mailto:sacha@hjkl.it?subject=Contact%20Sacha%20FROMENT&body=Bonjour%20M.Froment%2C)
 

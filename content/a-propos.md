@@ -20,4 +20,4 @@ J'ai travaillé à [Italic](https://italic.fr/) en tant qu'administrateur systè
 
 J'ai également fais un travail d'été pour la mairie de paris à la [DJS](https://www.service-public.pf/djs/).
 
-Pour plus de détails, voici mon [CV](/pdf/cv-public-de-sacha-froment.pdf).
+<!-- Pour plus de détails, voici mon [CV](/pdf/cv-public-de-sacha-froment.pdf). -->

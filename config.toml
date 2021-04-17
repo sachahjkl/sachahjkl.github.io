@@ -12,6 +12,8 @@ unsafe = true
 
 [params]
 sitename = "Sacha FROMENT"
+ethAdress = "0xDfB091f812ea27Ca58e8f556B252f245660cba87"
+ethQR = "/img/ethereum-qr.png"
 
 [taxonomies]
 tag = "tags"
