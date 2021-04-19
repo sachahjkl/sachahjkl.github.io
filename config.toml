@@ -27,8 +27,8 @@ url = "/"
 [[menu.primary]]
 name = "projets"
 pre = "📁"
-url = "/projets"
+url = "/projets/"
 [[menu.primary]]
 name = "à propos"
 pre = "📜"
-url = "/a-propos"
+url = "/a-propos/"
