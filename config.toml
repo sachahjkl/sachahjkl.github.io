@@ -12,8 +12,11 @@ unsafe = true
 
 [params]
 sitename = "Sacha FROMENT"
-ethAdress = "0xDfB091f812ea27Ca58e8f556B252f245660cba87"
+ethAddress = "0xDfB091f812ea27Ca58e8f556B252f245660cba87"
 ethQR = "/img/ethereum-qr.png"
+xmrAddress = "49ETBPrD54iCKeecWjPt2hfjciSRgptXzJc29Hd8FS97AQHzThdoxE1aE4NigAf8xYDxok1iaaGKD8a6EmUwUgkgTstDaFJ"
+xmrQR = "/img/xmr-qr.png"
+
 
 [taxonomies]
 tag = "tags"
