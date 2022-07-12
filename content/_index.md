@@ -14,7 +14,7 @@ draft: false
 
 <!-- Mon [CV](/pdf/cv-public-de-sacha-froment.pdf) -->
 
-📧 [M'envoyer un mail](mailto:sacha@hjkl.it?subject=Contact%20Sacha%20FROMENT&body=Bonjour%20M.Froment%2C)
+📧 [M'envoyer un mail](mailto:sacha@sacha.house?subject=Contact%20Sacha%20FROMENT&body=Bonjour%20M.Froment%2C)
 
 ------
 
