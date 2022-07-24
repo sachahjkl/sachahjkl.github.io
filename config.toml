@@ -1,10 +1,10 @@
-# baseURL = "https://sacha.house/"
+baseURL = "https://sachahjkl.github.io/sachahjkl.gitlab.io/"
 languageCode = "fr"
 title = "Sacha Froment"
 author = "Sacha Froment"
 theme = "hugo_theme_hjkl.it"
 
-# canonifyurls = true
+canonifyURLs = true
 include_toc = true
 
 [markup.goldmark.renderer]

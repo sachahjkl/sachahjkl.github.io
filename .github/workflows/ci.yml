@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+    tags: ["**"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: [self-hosted, nixos]
+    permissions:
+      contents: read
+      pages: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          submodules: recursive
+      # The external orchestrator must enable Pages with build_type=workflow.
+      - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5.0.0
+      - name: Build site
+        run: |
+          mkdir -p "$RUNNER_TEMP/hugo-public"
+          nix --extra-experimental-features "nix-command flakes" shell nixpkgs#podman --command podman run --rm \
+            --volume "$PWD:/src:ro" \
+            --volume "$RUNNER_TEMP/hugo-public:/output" \
+            --env HUGO_RESOURCEDIR=/tmp/resources \
+            --workdir /src \
+            docker.io/hugomods/hugo:0.125.7 \
+            hugo --destination /output --cacheDir /tmp/hugo-cache --noBuildLock
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        if: github.ref == 'refs/heads/master'
+        with:
+          path: ${{ runner.temp }}/hugo-public
+
+  deploy:
+    if: github.ref == 'refs/heads/master'
+    needs: build
+    runs-on: [self-hosted, nixos]
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    concurrency:
+      group: pages
+      cancel-in-progress: true
+    steps:
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0
