@@ -1,0 +1,8 @@
+name: "sachahjkl.gitlab.io"
+description: "https://sachahjkl.gitlab.io/ - Test de génération et d'hébergement de mon ancien site web personnel par GitLab (conçu avec Hugo)."
+topics: []
+homepage: ""
+source:
+  provider: gitlab
+  namespace: "sachahjkl"
+  path: "sachahjkl/sachahjkl.gitlab.io"
