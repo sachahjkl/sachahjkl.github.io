@@ -22,7 +22,7 @@ jobs:
       - name: Build site
         run: |
           mkdir -p "$RUNNER_TEMP/hugo-public"
-          nix --extra-experimental-features "nix-command flakes" shell nixpkgs#podman --command podman run --rm \
+          podman run --rm \
             --volume "$PWD:/src:ro" \
             --volume "$RUNNER_TEMP/hugo-public:/output" \
             --env HUGO_RESOURCEDIR=/tmp/resources \
