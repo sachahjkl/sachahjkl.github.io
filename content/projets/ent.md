@@ -3,7 +3,7 @@ icon: 🌐
 title: Espace numérique de travail
 date: 2021-02-02T23:40:23+01:00
 img: "/img/projets/ent.png"
-project_url: https://gitlab.com/cnam_a1_sys/client_serv_ipc
+project_url: https://github.com/sachahjkl/client_serv_ipc
 draft: false
 ---
 
