@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches: ["**"]
-    tags: ["**"]
+  pull_request:
   workflow_dispatch:
 
 jobs:
@@ -16,23 +16,18 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-          submodules: recursive
-      # The external orchestrator must enable Pages with build_type=workflow.
+      - name: Check flake
+        run: nix flake check --print-build-logs
+      - name: Check all systems
+        run: nix flake check --all-systems --no-build
+      - name: Build site package
+        run: nix build .#site --print-build-logs
       - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5.0.0
-      - name: Build site
-        run: |
-          mkdir -p "$RUNNER_TEMP/hugo-public"
-          podman run --rm \
-            --volume "$PWD:/src:ro" \
-            --volume "$RUNNER_TEMP/hugo-public:/output" \
-            --env HUGO_RESOURCEDIR=/tmp/resources \
-            --workdir /src \
-            docker.io/hugomods/hugo:0.125.7 \
-            hugo --destination /output --cacheDir /tmp/hugo-cache --noBuildLock
+        if: github.ref == 'refs/heads/master'
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         if: github.ref == 'refs/heads/master'
         with:
-          path: ${{ runner.temp }}/hugo-public
+          path: result
 
   deploy:
     if: github.ref == 'refs/heads/master'
