@@ -1,8 +1,10 @@
-# Site web personnel de Sacha FROMENT
+[English](README.md) | [Français](README.fr.md)
 
-Vous retrouverez dans ce dépot les fichiers que j'utilise pour générer mon site perso.
+# Personal website of Sacha FROMENT
 
-J'utilise comme outils pour le générer :
+This repository contains the files I use to generate my personal website.
 
-- **hugo** pour la gestion des templates et du contenu
-- **sass** pour la compilation du css
+I use the following tools to generate it:
+
+- **hugo** to manage templates and content
+- **sass** to compile CSS
