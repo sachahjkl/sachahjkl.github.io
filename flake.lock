@@ -1,21 +1,5 @@
 {
   "nodes": {
-    "hugo-nixpkgs": {
-      "locked": {
-        "lastModified": 1715793922,
-        "narHash": "sha256-iNoYQp24Z/Rk2LNUp7+zsud7HvEv/UDVGGEWRG9yCQk=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "0afa1438f7b195a370a971a025310c69cb8b2742",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "0afa1438f7b195a370a971a025310c69cb8b2742",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1786599213,
@@ -34,7 +18,6 @@
     },
     "root": {
       "inputs": {
-        "hugo-nixpkgs": "hugo-nixpkgs",
         "nixpkgs": "nixpkgs",
         "theme": "theme"
       }
@@ -42,16 +25,16 @@
     "theme": {
       "flake": false,
       "locked": {
-        "lastModified": 1658648553,
-        "narHash": "sha256-W5C3o9sWHjlHo4ig0sirCAPZd91S7H9/x12jkdne6mU=",
+        "lastModified": 1786694463,
+        "narHash": "sha256-Qdq+hONxupm79Qiwe8ivotyjz03Ggc4hSkqQO51c7Zo=",
         "ref": "refs/heads/master",
-        "rev": "a6505b23dc5a1c8bf8da46775f5d68e85bf48ee0",
-        "revCount": 16,
+        "rev": "6e84649cbd3fb750a89f0f8d69e9c79b8724a08f",
+        "revCount": 18,
         "type": "git",
         "url": "https://github.com/sachahjkl/hugo_theme_hjkl.it.git"
       },
       "original": {
-        "rev": "a6505b23dc5a1c8bf8da46775f5d68e85bf48ee0",
+        "rev": "6e84649cbd3fb750a89f0f8d69e9c79b8724a08f",
         "type": "git",
         "url": "https://github.com/sachahjkl/hugo_theme_hjkl.it.git"
       }

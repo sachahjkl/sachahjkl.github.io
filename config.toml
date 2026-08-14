@@ -1,5 +1,5 @@
 baseURL = "https://sachahjkl.github.io/"
-languageCode = "fr"
+locale = "fr"
 title = "Sacha Froment"
 author = "Sacha Froment"
 theme = "hugo_theme_hjkl.it"

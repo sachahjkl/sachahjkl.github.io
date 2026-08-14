@@ -3,16 +3,14 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    hugo-nixpkgs.url = "github:NixOS/nixpkgs/0afa1438f7b195a370a971a025310c69cb8b2742";
     theme = {
-      url = "git+https://github.com/sachahjkl/hugo_theme_hjkl.it.git?rev=a6505b23dc5a1c8bf8da46775f5d68e85bf48ee0";
+      url = "git+https://github.com/sachahjkl/hugo_theme_hjkl.it.git?rev=6e84649cbd3fb750a89f0f8d69e9c79b8724a08f";
       flake = false;
     };
   };
 
   outputs =
     {
-      hugo-nixpkgs,
       nixpkgs,
       theme,
       ...
@@ -24,7 +22,6 @@
       ];
       forAllSystems = nixpkgs.lib.genAttrs systems;
       pkgsFor = system: import nixpkgs { inherit system; };
-      hugoFor = system: (import hugo-nixpkgs { inherit system; }).hugo;
       siteFor =
         system:
         let
@@ -34,7 +31,7 @@
           pname = "sachahjkl.github.io";
           version = "1";
           src = ./.;
-          nativeBuildInputs = [ (hugoFor system) ];
+          nativeBuildInputs = [ pkgs.hugo ];
 
           buildPhase = ''
             runHook preBuild
@@ -90,7 +87,7 @@
           default = pkgs.mkShellNoCC {
             packages = [
               pkgs.actionlint
-              (hugoFor system)
+              pkgs.hugo
               pkgs.lychee
               pkgs.nixfmt-tree
             ];
