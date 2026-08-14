@@ -1,5 +1,3 @@
-[English](README.md) | [Français](README.fr.md)
-
 # Personal website of Sacha FROMENT
 
 This repository contains the files I use to generate my personal website.
